@@ -1,5 +1,17 @@
 # Oscillation Analysis Plots
 
+## Build and Run
+
+To build and run any of the plotting executables (for example, `plot_survival`), execute:
+
+```bash
+cmake -S . -B build
+cmake --build build --target plot_survival
+./build/plot_survival
+```
+
+Replace `plot_survival` with another target such as `plot_mixing`, `plot_cp`, or `plot_matter` to generate different plots.
+
 ## plot_survival
 Two-flavor survival probability versus $L/E$ inspired by Pontecorvo (1957) and Maki–Nakagawa–Sakata (1962).
 
