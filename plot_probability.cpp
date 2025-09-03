@@ -5,15 +5,26 @@
 #include <TAxis.h>
 #include <vector>
 #include <cmath>
+#include <cstdlib>
+#include <iostream>
 
 #include "PlotStyle.h"
 #include "Oscillation.h"
 
-int main() {
+int main(int argc, char **argv) {
     SetElegantStyle();
 
-    double L = 295.0;
-    double E = 0.6;
+    double L = 1300.0;
+    double E = 2.5;
+
+    if (argc > 1) {
+        L = std::atof(argv[1]);
+    }
+
+    if (argc > 2) {
+        E = std::atof(argv[2]);
+    }
+
     PMNSParams nh{0.5843, 0.830, 0.148, 7.42e-5, 2.517e-3, 0.0};
     PMNSParams ih{0.5843, 0.830, 0.148, 7.42e-5, -2.498e-3, 0.0};
     PMNSVacuum pmns_nh(nh), pmns_ih(ih);
